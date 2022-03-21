@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../App.css';
 import { Row, Col,  Input, Button, Modal } from 'antd';
 import 'antd/dist/antd.css';
-import '../../css/Custom.css';
+import '../../css/custom.css';
 import axios from 'axios';
 import { useDispatch,useSelector } from 'react-redux';
 import { register } from '../../features/userSlice';
