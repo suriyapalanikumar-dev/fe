@@ -16,14 +16,17 @@ import {
 const {Search} = Input;
 const  {Option} = Select;
 const SearchInitialMobile = () =>{
-    const [isoverview, setOverview] = useState(false)
-    if(isoverview && !localStorage.getItem("Set"))
+    const [isoverview, setisOverview] = useState(false)
+
+    const handleClick = (e) =>{
+      setisOverview(true)
+    }
+    if(isoverview)
     {
         return <Navigate replace to = "/summaryoverrview"/>
     }
-    else{
-        return <Navigate replace to = "/oositem"/>
-    }
+
+
 return (
     <div>
     <Navbar/>
@@ -33,13 +36,14 @@ return (
     <Option value="1">Price low to high</Option>
     <Option value="2">Price high to low</Option>
   </Select>
+
     <Row>
     <Col span={6} style={{paddingLeft:"2%"}}>
     <Card
       hoverable
       style={{ width: "75%", height: "50%" }}
       cover={<img alt="example" src={process.env.REACT_APP_SERVER+"/image/"+'1647805935918-electronic2.jpg'} />}
-      onClick={(e)=>setOverview(true)}
+      onClick={(e)=>handleClick(e)}
     >
       <div>
         <Row>
@@ -55,9 +59,8 @@ return (
       <p><b><span>USD </span><span>300 </span></b></p>
     </Card>
   </Col>
-
       </Row>
-        
+
     </div>
     </div>
     
